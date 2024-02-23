@@ -21,4 +21,6 @@ class Veiculo extends Model
         'crv',
         'atpve',
     ];
+
+    protected $guarded = [];
 }

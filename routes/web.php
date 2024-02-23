@@ -17,15 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function(){
-
-//     if ( ! Auth::check() ) {
-//         return redirect('/');
-//     }
-
-//     return view('dashboard');
-// });
-
 use App\Http\Controllers\RegisteredUserController;
 Route::controller(RegisteredUserController::class)->group(function () {
     Route::get('/register', 'create');
@@ -48,4 +39,5 @@ Route::controller(VeiculoController::class)->group(function () {
     Route::get('/dashboard', 'dashboard');
     Route::delete('/veiculos/{id}', 'destroy');
     Route::get('/veiculos/edit/{id}', 'edit');
-})->middleware('auth');
+    Route::put('/veiculos/update/{id}', 'update');
+});

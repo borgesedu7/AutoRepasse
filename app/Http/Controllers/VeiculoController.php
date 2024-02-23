@@ -94,9 +94,11 @@ class VeiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        Veiculo::findOrFail($request->id)->update($request->all());
+
+        return redirect('/dashboard')->with('msg','Veiculo excluido com sucesso');;
     }
 
     /**
@@ -109,6 +111,6 @@ class VeiculoController extends Controller
     {
         Veiculo::findOrFail($id)->delete();
 
-        return redirect('dashboard')->with('msg','Veiculo excluido com sucesso');
+        return redirect('/dashboard')->with('msg','Veiculo excluido com sucesso');
     }
 }

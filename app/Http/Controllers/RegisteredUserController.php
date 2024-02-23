@@ -16,7 +16,7 @@ class RegisteredUserController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -49,12 +49,11 @@ class RegisteredUserController extends Controller
             $user->contato = $contato;
             $user->password = Hash::make($password);
             $user->save();
-            
+
             Auth::login($user);
-            
+
             return redirect(url('index'));
     }
-
     /**
      * Display the specified resource.
      *
@@ -100,3 +99,6 @@ class RegisteredUserController extends Controller
         //
     }
 }
+
+
+

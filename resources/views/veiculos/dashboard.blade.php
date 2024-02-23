@@ -10,8 +10,6 @@
 
     <h1>Veículos Cadastrados</h1>
 
-    
-
         @if (count($veiculo) > 0) 
 
             @foreach ($veiculo as $veiculos)
