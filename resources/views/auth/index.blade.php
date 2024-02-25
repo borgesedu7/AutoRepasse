@@ -9,9 +9,11 @@
 <body>
     <h1>Bem vindo, {{Auth::user()->name}}</h1>   
 
-    <a href="{{url('/create')}}">Cadastrar Veículo</a>
+    <a href="{{url('/veiculo/create')}}">Cadastrar Veículo</a>
 
-    <a href="{{url('/dashboard')}}">Veículos Cadastrados</a>
+    <a href="{{url('/cliente/create')}}">Cadastrar Cliente</a>
+
+    <a href="{{url('/veiculo/dashboard')}}">Veículos Cadastrados</a>
 
     <form action="{{url('/logout')}}" method="post">
         @csrf

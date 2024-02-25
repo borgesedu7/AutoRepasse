@@ -9,7 +9,7 @@
 <body>
     <h1>Cadastro de Veículo</h1>
 
-    <form action="{{url("store")}}" method="post">
+    <form action="{{url("veiculo/store")}}" method="post">
 
         @csrf
 

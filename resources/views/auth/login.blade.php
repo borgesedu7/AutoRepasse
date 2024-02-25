@@ -10,7 +10,7 @@
     <h1>Login</h1>
     <form action="{{url('/login')}}" method="POST">
         @csrf
-        <label for="name">name</label>
+        <label for="name">Nome</label>
         <input type="text" name="name">
         <label for="password">Senha</label>
         <input type="password" name="password" id="password">

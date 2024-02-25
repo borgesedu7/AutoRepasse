@@ -49,7 +49,7 @@ class VeiculoController extends Controller
         ]);
 
 
-        return view('auth.index');
+        return redirect(url('/index'));
 
     }
 

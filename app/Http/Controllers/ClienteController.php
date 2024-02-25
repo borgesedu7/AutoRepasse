@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-use App\Models\User;
-class LoginController extends Controller
+use App\Models\Cliente;
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('auth.index');
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        return view('auth.login'); 
+        return view('cliente.create');
     }
 
     /**
@@ -34,21 +33,18 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
     {
-        
-        $credintials = [
-            'name' => $request->name,
-            'password' => $request->password,
-        ];
+        Cliente::create([
 
-        if (Auth::attempt($credintials)) {
-            $request->session()->regenerate();
-            return redirect(url('/index'));
-        }
+            'nome' => $request->nome,
+            'cidade' => $request->cidade,
+            'estado' => $request->estado,
+            'cpf' => $request->cpf,
+            'cnpj' => $request->cnpj,
+            'contato' => $request->contato,
+        ]);
 
-        return back()->withInput();
-
+        return redirect(url('/index'));
     }
 
     /**
@@ -91,10 +87,8 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        return redirect(url('/'));
+        //
     }
 }
