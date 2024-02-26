@@ -39,14 +39,10 @@ class RegisteredUserController extends Controller
     {
 
             $name = $request->name;
-            $cpf = $request->cpf;
-            $contato = $request->contato;
             $password = $request->password;
 
             $user = new User;
             $user->name = $name;
-            $user->cpf = $cpf;
-            $user->contato = $contato;
             $user->password = Hash::make($password);
             $user->save();
 
