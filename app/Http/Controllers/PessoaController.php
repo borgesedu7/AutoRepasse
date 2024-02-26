@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
-class ClienteController extends Controller
+use App\Models\Pessoa;
+class PessoaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('cliente.create');
+        return view('pessoa.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        Cliente::create([
+        Pessoa::create([
 
             'nome' => $request->nome,
             'cidade' => $request->cidade,

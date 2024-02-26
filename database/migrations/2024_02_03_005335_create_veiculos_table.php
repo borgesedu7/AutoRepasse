@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('veiculos', function (Blueprint $table) {
             $table->id();
-            $table->string('veiculo', 45);
+            $table->string('veiculo', 45)->nullable(false);
             $table->string('ano_modelo', 8);
-            $table->string('placa', 7)->unique();
-            $table->string('renavam', 11)->unique();
-            $table->string('cor', 15);
+            $table->string('placa', 7)->unique()->nullable(false);
+            $table->string('renavam', 11)->unique()->nullable(false);
+            $table->string('cor', 15)->nullable(false);
             $table->string('chassi', 20)->unique();
             $table->string('cod_seg_crv', 20)->unique();
             $table->string('cod_seg_cla', 20)->unique();

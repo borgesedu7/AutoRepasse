@@ -46,8 +46,8 @@ Route::controller(VeiculoController::class)->group(function () {
 })->middleware('auth');
 
 // Clientes
-use App\Http\Controllers\ClienteController;
-Route::controller(ClienteController::class)->group(function (){
-    Route::get('/cliente/create', 'create');
-    Route::post('/cliente/store', 'store');
+use App\Http\Controllers\PessoaController;
+Route::controller(PessoaController::class)->group(function (){
+    Route::get('/pessoa/create', 'create');
+    Route::post('/pessoa/store', 'store');
 })->middleware('auth');
