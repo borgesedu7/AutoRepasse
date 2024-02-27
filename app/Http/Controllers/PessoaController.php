@@ -55,7 +55,9 @@ class PessoaController extends Controller
      */
     public function show($id)
     {
-        //
+        $pessoa = Pessoa::findOrFail($id);
+
+        return view('pessoa.show', ['pessoa' => $pessoa]);
     }
 
     /**
@@ -89,6 +91,8 @@ class PessoaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pessoa::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg','Veiculo excluido com sucesso');
     }
 }

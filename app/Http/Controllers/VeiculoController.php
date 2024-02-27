@@ -24,7 +24,7 @@ class VeiculoController extends Controller
      */
     public function create()
     {
-        return view("veiculos.create");
+        return view('veiculos.create');
     }
 
     /**
@@ -59,6 +59,8 @@ class VeiculoController extends Controller
         return view('veiculos.dashboard', [
             'veiculo' => $veiculo,
         ]);
+
+        
     }
     /**
      * Display the specified resource.
@@ -68,7 +70,6 @@ class VeiculoController extends Controller
      */
     public function show($id)
     {
-       
         $veiculo = Veiculo::findOrFail($id);
 
         return view('veiculos.show', ['veiculo' => $veiculo]);
@@ -98,7 +99,7 @@ class VeiculoController extends Controller
     {
         Veiculo::findOrFail($request->id)->update($request->all());
 
-        return redirect('/dashboard')->with('msg','Veiculo excluido com sucesso');;
+        return redirect('/veiculo/dashboard')->with('msg','Veiculo editado com sucesso');
     }
 
     /**
@@ -111,6 +112,6 @@ class VeiculoController extends Controller
     {
         Veiculo::findOrFail($id)->delete();
 
-        return redirect('/dashboard')->with('msg','Veiculo excluido com sucesso');
+        return redirect(url('/index'))->with('msg','Veiculo excluido com sucesso');
     }
 }

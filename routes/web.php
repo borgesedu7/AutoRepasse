@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,19 +30,19 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/index', 'index');
     Route::get('/login', 'create');
     Route::post('/login', 'store');
-    Route::post('logout', 'destroy')->middleware('auth');
+    Route::post('/logout', 'destroy')->middleware('auth');
 });
 
 // Veiculos
 Use App\Http\Controllers\VeiculoController;
 Route::controller(VeiculoController::class)->group(function () {
     Route::get('/veiculo/create', 'create');
-    Route::post('veiculo/store', 'store');
-    Route::get('/veiculos/{id}', 'show');
+    Route::post('/veiculo/store', 'store');
+    Route::get('/veiculo/show/{id}', 'show');
     Route::get('/veiculo/dashboard', 'dashboard');
-    Route::delete('/veiculos/{id}', 'destroy');
-    Route::get('/veiculos/edit/{id}', 'edit');
-    Route::put('/veiculos/update/{id}', 'update');
+    Route::delete('/veiculo/destroy/{id}', 'destroy');
+    Route::get('/veiculo/edit/{id}', 'edit');
+    Route::put('/veiculo/update/{id}', 'update');
 })->middleware('auth');
 
 // Clientes
@@ -50,4 +50,5 @@ use App\Http\Controllers\PessoaController;
 Route::controller(PessoaController::class)->group(function (){
     Route::get('/pessoa/create', 'create');
     Route::post('/pessoa/store', 'store');
+    Route::get('/pessoa/{id}', 'show');
 })->middleware('auth');

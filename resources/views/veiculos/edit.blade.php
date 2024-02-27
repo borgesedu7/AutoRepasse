@@ -9,7 +9,7 @@
 <body>
     <h1>Editar Veiculo</h1>
 
-    <form action="/veiculos/update/{{$veiculo->id}}" method="post">
+    <form action="/veiculo/update/{{$veiculo->id}}" method="post">
 
         @csrf
         @method('PUT')
@@ -58,6 +58,6 @@
 
     </form>
 
-    <a href="{{url('dashboard')}}">Voltar</a>
+    <a href="{{url('/veiculo/dashboard')}}">Voltar</a>
 </body>
 </html>

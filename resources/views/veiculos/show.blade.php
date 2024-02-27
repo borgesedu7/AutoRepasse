@@ -19,6 +19,7 @@
     <p>Codigo de segurança do CLA: {{$veiculo->cod_seg_cla}}</p>
     <p>Chassi: {{$veiculo->chassi}}</p>
     <p>Atpve: {{$veiculo->atpve}}</p>
-
+    
+    <a href="{{url('/veiculo/dashboard')}}">Voltar</a>
 </body>
 </html>

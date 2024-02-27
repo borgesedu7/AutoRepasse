@@ -15,15 +15,15 @@
             @foreach ($veiculo as $veiculos)
             <tr>
                 <td scropt="row">{{$loop->index + 1}}</td>
-                <td><a href="/veiculos/{{$veiculos->id}}">{{$veiculos}}</a></td>
+                <td><a href="/veiculo/show/{{$veiculos->id}}">{{$veiculos}}</a></td>
                 <td>0</td>
 
-            <form action="veiculos/edit/{{$veiculos->id}}" method="get">
+            <form action="/veiculo/edit/{{$veiculos->id}}" method="get">
                 @csrf
                 <button>Editar</button>
                 </form>
         
-            <form action="/veiculos/{{$veiculos->id}}" method="post">
+            <form action="/veiculo/destroy/{{$veiculos->id}}" method="post">
                 @csrf
                 @method('DELETE')
 
@@ -34,7 +34,7 @@
             @endforeach
     
         @else
-       <p>Você ainda não cadastrou nenhum veiculo, <a href="{{url('/create')}}">Cadastrar Veículo</a></p>
+       <p>Você ainda não cadastrou nenhum veiculo, <a href="{{url('/veiculo/create')}}">Cadastrar Veículo</a></p>
         @endif
     
     <p><a href="{{url('index')}}">Voltar</a></p> 
