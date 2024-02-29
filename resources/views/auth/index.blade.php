@@ -15,6 +15,8 @@
 
     <a href="{{url('/veiculo/dashboard')}}">Veículos Cadastrados</a>
 
+    <a href="{{url('/venda/create')}}">Cadastrar Vendas</a>
+
     <form action="{{url('/logout')}}" method="post">
         @csrf
         <button>Sair</button>

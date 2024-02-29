@@ -52,3 +52,10 @@ Route::controller(PessoaController::class)->group(function (){
     Route::post('/pessoa/store', 'store');
     Route::get('/pessoa/{id}', 'show');
 })->middleware('auth');
+
+use App\Http\Controllers\VendaController;
+Route::controller(VendaController::class)->group(function(){
+    Route::get('/venda/create', 'create');
+    Route::post('/venda/store', 'store');
+    Route::get('venda/show', 'show');
+})->middleware('auth');

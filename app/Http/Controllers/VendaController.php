@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Veiculo;
 
-class VeiculoController extends Controller
+use App\Models\Venda;
+use App\Models\Veiculo;
+use App\Models\Pessoa;
+
+class VendaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,7 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -24,7 +27,15 @@ class VeiculoController extends Controller
      */
     public function create()
     {
-        return view('veiculos.create');
+
+        $veiculos = Veiculo::all();
+        $pessoas = Pessoa::all();
+
+        return view('venda.create', [
+            'veiculos' => $veiculos,
+            'pessoas' => $pessoas,
+        ]);
+
     }
 
     /**
@@ -35,22 +46,26 @@ class VeiculoController extends Controller
      */
     public function store(Request $request)
     {
+
+        $venda = new Venda();
         
-        Veiculo::create($request->all());
+        $venda->tipo = $request->input('tipo');
+        
+        if ($request->input('financiamento') == '') {
+            $venda->financiamento = 'não';
+        } else{
+            $venda->financiamento = 'sim';
+        }
+        
+        $venda->veiculo_id = $request->veiculos;
+        $venda->pessoa_id = $request->pessoas;
+        
+        $venda->save();
 
         return redirect(url('/index'));
-
+       
     }
 
-    public function dashboard() {
-
-        $veiculo = Veiculo::all(['id','veiculo', 'ano_modelo', 'placa','cor']);
-        return view('veiculos.dashboard', [
-            'veiculo' => $veiculo,
-        ]);
-
-        
-    }
     /**
      * Display the specified resource.
      *
@@ -59,9 +74,9 @@ class VeiculoController extends Controller
      */
     public function show($id)
     {
-        $veiculo = Veiculo::findOrFail($id);
+        $venda = Veiculo::findOrFail($id);
 
-        return view('veiculos.show', ['veiculo' => $veiculo]);
+        return view('venda.show', ['venda' => $venda]);
     }
 
     /**
@@ -72,9 +87,7 @@ class VeiculoController extends Controller
      */
     public function edit($id)
     {
-        $veiculo = Veiculo::findOrFail($id);
-
-        return view('veiculos.edit', ['veiculo' => $veiculo]);
+        //
     }
 
     /**
@@ -84,11 +97,9 @@ class VeiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        Veiculo::findOrFail($request->id)->update($request->all());
-
-        return redirect('/veiculo/dashboard')->with('msg','Veiculo editado com sucesso');
+        //
     }
 
     /**
@@ -99,8 +110,6 @@ class VeiculoController extends Controller
      */
     public function destroy($id)
     {
-        Veiculo::findOrFail($id)->delete();
-
-        return redirect(url('/index'))->with('msg','Veiculo excluido com sucesso');
+        //
     }
 }
