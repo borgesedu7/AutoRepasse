@@ -9,15 +9,15 @@
 <body>
     <h1>Bem vindo, {{Auth::user()->name}}</h1>   
 
-    <a href="{{url('/veiculo/create')}}">Cadastrar Veículo</a>
+    <a href="{{url('/veiculo/create')}}">Cadastrar Veículo</a> <br>
 
-    <a href="{{url('/pessoa/create')}}">Cadastrar Pessoa</a>
+    <a href="{{url('/pessoa/create')}}">Cadastrar Pessoa</a> <br>
 
-    <a href="{{url('/veiculo/dashboard')}}">Veículos Cadastrados</a>
+    <a href="{{url('/veiculo/dashboard')}}">Veículos Cadastrados</a> <br>
 
-    <a href="{{url('/venda/create')}}">Cadastrar Vendas</a>
+    <a href="{{url('/venda/create')}}">Cadastrar Vendas</a> <br>
 
-    <form action="{{url('/logout')}}" method="post">
+    <form action="{{url('/logout')}}" method="post"> <br> <br>
         @csrf
         <button>Sair</button>
     </form>
