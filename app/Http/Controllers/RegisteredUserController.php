@@ -38,11 +38,13 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
 
-            $name = $request->name;
+            $email = $request->email;
             $password = $request->password;
+            $name = $request->name;
 
             $user = new User;
             $user->name = $name;
+            $user->email = $email;
             $user->password = Hash::make($password);
             $user->save();
 

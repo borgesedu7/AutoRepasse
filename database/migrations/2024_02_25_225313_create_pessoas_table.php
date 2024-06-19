@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('estado', 2)->nullable(false);
             $table->string('cpf', 11)->nullable(true);
             $table->string('cnpj', 14)->nullable(true);
-            $table->string('contato', 12);
+            $table->string('contato', 12)->nullabe(true);
             $table->timestamps();
         });
     }

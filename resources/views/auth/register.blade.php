@@ -15,6 +15,9 @@
         <label for="name">Nome</label>
         <input type="text" name="name">
 
+        <label for="email">Email</label>
+        <input type="text" name="email">
+
         <label for="password">Senha</label>
         <input type="password" name="password" id="password">
 
