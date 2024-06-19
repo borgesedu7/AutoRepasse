@@ -15,45 +15,45 @@
 
         {{-- Veiculo --}}
         <label>Veiculo:</label>
-        <input type="text" name="veiculo">
+        <input type="text" name="veiculo"> <br>
 
         {{-- Ano/Modelo --}}
         <label>Ano/Modelo:</label>
-        <input type="text" name="ano_modelo">
+        <input type="text" name="ano_modelo"> <br>
 
         {{-- Placa --}}
         <label>Placa:</label>
-        <input type="text" name="placa">
+        <input type="text" name="placa"> <br>
 
         {{-- Renavam --}}
         <label>Renavam:</label>
-        <input type="text" name="renavam">
+        <input type="text" name="renavam"> <br>
 
         {{-- Cor --}}
         <label>Cor:</label>
-        <input type="text" name="cor">
+        <input type="text" name="cor"> <br>
 
         {{-- Chassi --}}
         <label>Chassi:</label>
-        <input type="text" name="chassi">
+        <input type="text" name="chassi"> <br>
 
         {{-- Codigo de Segurança CRV --}}
         <label>Codigo Seg. CRV:</label>
-        <input type="text" name="cod_seg_crv">
+        <input type="text" name="cod_seg_crv"> <br>
 
         {{-- Codigo de Segurança CLA --}}
         <label>Codigo Seg. CLA:</label>
-        <input type="text" name="cod_seg_cla">
+        <input type="text" name="cod_seg_cla"> <br>
 
         {{-- CRV --}}
         <label>CRV:</label>
-        <input type="text" name="crv">
+        <input type="text" name="crv"> <br>
 
         {{-- ATPVE --}}
         <label>ATPVE:</label>
-        <input type="text" name="atpve">
+        <input type="text" name="atpve"> <br> <br>
 
-        <button>Adicionar Veículo</button>
+        <button>Adicionar Veículo</button> <br> <br>
 
     </form>
 
