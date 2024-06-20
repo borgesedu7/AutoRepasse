@@ -7,6 +7,7 @@
     <title>AutoRepasse</title>
 </head>
 <body>
+    <h1>Olá</h1>
     <img src="foto.png" alt="logo">
     <label for="login">
         <a href="{{url('/login')}}">Login</a>
